@@ -141,9 +141,9 @@ var projects = {
                     var formattedProjectImage = HTMLprojectImage.replace("%data%", projectObject.images[image])
                     //append formatted var to .project-entry
                     $(".project-entry:last").append(formattedProjectImage);
-                }; //end for
+                }; //end of for
             }; //end if
-        } //end for
+        } //end of for
     } //end of display method
 }; //end of projects
 
@@ -222,8 +222,8 @@ var education = {
                 var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", schoolObject.majors[major]);
                 //append major to .education-entry
                 $(".education-entry:last").append(formattedSchoolMajor);
-            } //end for major
-        } //end for schools
+            } //end of for major
+        } //end of for schools
 
         //append online courses start
         if (education.onlineCourses.length > 0) {
@@ -245,7 +245,7 @@ var education = {
                 $(".education-entry:last").append(formattedOnlineTitleSchool);
                 $(".education-entry:last").append(formattedOnlineDates);
                 $(".education-entry:last").append(formattedOnlineURL);
-            } //end for onlineCourses
+            } //end of for onlineCourses
         } //end of if
     } //end of display method
 }; //end of education
