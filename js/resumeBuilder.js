@@ -115,7 +115,35 @@ var projects = {
                 "images/197x148.gif"
             ] //end of images
         }
-    ] //end of projects array
+    ], //end of projects array
+    "display": function() {
+        //loop projects array
+        for (project in projects.projects) {
+            $("#projects").append(HTMLprojectStart);
+
+            //formatted projects properties
+            var projectObject = projects.projects[project]; //variable to contain a long selector
+            var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projectObject.title);
+            var formattedProjectDates = HTMLprojectDates.replace("%data%", projectObject.dates);
+            var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projectObject.description);
+
+            //append formatted projects properties to .project-entry
+            $(".project-entry:last").append(formattedProjectTitle);
+            $(".project-entry:last").append(formattedProjectDates);
+            $(".project-entry:last").append(formattedProjectDescription);
+
+            //append project images
+            if (projectObject.images.length > 0) {
+                //loop project images
+                for (image in projectObject.images) {
+                    //formatted project image
+                    var formattedProjectImage = HTMLprojectImage.replace("%data%", projectObject.images[image])
+                    //append formatted var to .project-entry
+                    $(".project-entry:last").append(formattedProjectImage);
+                }; //end for
+            }; //end if
+        } //end for
+    } //end of display method
 }; //end of projects
 
 //create education object
