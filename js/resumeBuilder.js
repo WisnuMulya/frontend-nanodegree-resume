@@ -85,12 +85,13 @@ var work = {
             $("#workExperience").append(HTMLworkStart);
 
             //formatted work properties
-            var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-            var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+            var workObject = work.jobs[job]; //variable to contain a long selector
+            var formattedEmployer = HTMLworkEmployer.replace("%data%", workObject.employer);
+            var formattedTitle = HTMLworkTitle.replace("%data%", workObject.title);
             var formattedEmployerTitle = formattedEmployer + formattedTitle;
-            var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-            var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-            var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+            var formattedLocation = HTMLworkLocation.replace("%data%", workObject.location);
+            var formattedDates = HTMLworkDates.replace("%data%", workObject.dates);
+            var formattedDescription = HTMLworkDescription.replace("%data%", workObject.description);
 
             //append work properties to .work-entry
             $(".work-entry:last").append(formattedEmployerTitle);
