@@ -78,7 +78,27 @@ var work = {
             "dates": "June 2012 - Current",
             "description": "Starting up a new business unit for the company and mainly responsible in managing daily operational routines, orienting on customer development or lean startup process, engaging on inbound marketing, doing front-end web development, and making materials for online teaching."
         }
-    ] //end of jobs array
+    ], //end of jobs array
+    "display": function() {
+        //loop jobs array
+        for (job in work.jobs) {
+            $("#workExperience").append(HTMLworkStart);
+
+            //formatted vars work
+            var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+            var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+            var formattedEmployerTitle = formattedEmployer + formattedTitle;
+            var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+            var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+            var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+
+            //append to .work-entry
+            $(".work-entry:last").append(formattedEmployerTitle);
+            $(".work-entry:last").append(formattedDates);
+            $(".work-entry:last").append(formattedLocation);
+            $(".work-entry:last").append(formattedDescription);
+        } //end of for
+    } //end of display method
 }; //end of work
 
 //create projects object
