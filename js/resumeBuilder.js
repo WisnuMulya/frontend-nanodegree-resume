@@ -150,3 +150,6 @@ var education = {
         }
     ] //end of onlineCourses array
 }; //end of education
+
+//display methods executed
+bio.display();
