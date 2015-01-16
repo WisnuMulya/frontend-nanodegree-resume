@@ -202,3 +202,4 @@ var education = {
 //display methods executed
 bio.display();
 work.display();
+projects.display();
