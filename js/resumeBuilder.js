@@ -63,7 +63,7 @@ var bio = {
 
                 //append skill to skills section
                 $("#skills").append(formattedSkill);
-            }
+            } //end of for
         } //end of if
     } // end of display method
 }; //end of bio
