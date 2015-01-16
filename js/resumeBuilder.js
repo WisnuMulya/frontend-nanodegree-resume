@@ -14,7 +14,58 @@ var bio = {
     "skills": [
         "Web Development", "Startup Development", "Data Analysis", "Inbound Marketing", "Online Course Development"
     ], //end of skills
-    "biopic": "http://www.gravatar.com/avatar/c076638bbeb514e5d4f6d2fa04bb8d23?s=200"
+    "biopic": "http://www.gravatar.com/avatar/c076638bbeb514e5d4f6d2fa04bb8d23?s=200",
+    "display": function() {
+        //formatted bio properties
+        var formattedName = HTMLheaderName.replace("%data%", bio.name);
+        var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+        var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
+        var formattedWelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
+
+        //formatted bio contacts properties
+        var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+        var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+        var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+        var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+        var formattedBlog = HTMLblog.replace("%data%", bio.contacts.blog);
+        var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+
+        //attach bio properties to header
+        $("#header").prepend(formattedRole);
+        $("#header").prepend(formattedName);
+        $("#header").append(formattedBioPic);
+        $("#header").append(formattedWelcomeMsg);
+
+        //attach bio contacts to header
+        $("#topContacts").append(formattedMobile);
+        $("#topContacts").append(formattedEmail);
+        $("#topContacts").append(formattedGithub);
+        $("#topContacts").append(formattedTwitter);
+        $("#topContacts").append(formattedBlog);
+        $("#topContacts").append(formattedLocation);
+
+        //attach bio contacts to footerContacts
+        $("#footerContacts").append(formattedMobile);
+        $("#footerContacts").append(formattedEmail);
+        $("#footerContacts").append(formattedGithub);
+        $("#footerContacts").append(formattedTwitter);
+        $("#footerContacts").append(formattedBlog);
+        $("#footerContacts").append(formattedLocation);
+
+        //append skills to header
+        if (bio.skills.length > 0) {
+            $("#header").append(HTMLskillsStart);
+
+            //loop skills array
+            for (skill in bio.skills) {
+                //formatted skill
+                var formattedSkill = HTMLskills.replace("%data%",bio.skills[skill]);
+
+                //append skill to skills section
+                $("#skills").append(formattedSkill);
+            }
+        } //end of if
+    } // end of display method
 }; //end of bio
 
 //create work object
