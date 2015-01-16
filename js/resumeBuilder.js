@@ -46,3 +46,56 @@ var projects = {
         }
     ] //end of projects array
 }; //end of projects
+
+//create education object
+var education = {
+    "schools": [
+        {
+            "name": "Institut Teknologi Bandung",
+            "location": "Bandung, Indonesia",
+            "degree": "None",
+            "majors": ["Electrical Engineering", "Computer Science"],
+            "dates": "2010 - 2011"
+        },
+        {
+            "name": "Universitas Indonesia",
+            "location": "Jakarta, Indonesia",
+            "degree": "None",
+            "majors": ["Medicine"],
+            "dates": "2011 - 2013"
+        },
+        {
+            "name": "University of London",
+            "location": "London, UK",
+            "degree": "BSC",
+            "majors": ["Mathematics", "Economics"],
+            "dates": "2012 - Current"
+        }
+    ], //end of schools array
+    "onlineCourses": [
+        {
+            "title": "How to Build a Startup: The Lean Launchpad",
+            "school": "Udacity",
+            "dates": "January, 2014",
+            "url": "https://www.udacity.com/course/ep245"
+        },
+        {
+            "title": "Leading Strategic Innovation in Organizations",
+            "school": "Coursera",
+            "dates": "April, 2013",
+            "url": "https://www.coursera.org/course/innovation"
+        },
+        {
+            "title": "Think Again: How to Reason and Argue",
+            "school": "Coursera",
+            "dates": "February, 2013",
+            "url": "https://www.coursera.org/course/thinkagain"
+        },
+        {
+            "title": "Intro to HTML and CSS",
+            "school": "Udacity",
+            "dates": "December, 2014",
+            "url": "https://www.udacity.com/course/ud304"
+        }
+    ] //end of onlineCourses array
+}; //end of education
