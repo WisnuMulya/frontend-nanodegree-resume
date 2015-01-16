@@ -226,25 +226,27 @@ var education = {
         } //end for schools
 
         //append online courses start
-        $("#education").append(HTMLonlineClasses);
+        if (education.onlineCourses.length > 0) {
+            $("#education").append(HTMLonlineClasses);
 
-        //loop onlineCourses array
-        for (course in education.onlineCourses) {
-            $("#education").append(HTMLschoolStart);
+            //loop onlineCourses array
+            for (course in education.onlineCourses) {
+                $("#education").append(HTMLschoolStart);
 
-            //formatted onlineCourse properties
-            var onlineObject = education.onlineCourses[course]; //variable to contain a long selector
-            var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", onlineObject.title);
-            var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", onlineObject.school);
-            var formattedOnlineTitleSchool = formattedOnlineTitle + formattedOnlineSchool;
-            var formattedOnlineDates = HTMLonlineDates.replace("%data%", onlineObject.dates);
-            var formattedOnlineURL = HTMLonlineURL.replace("%data%", onlineObject.url);
+                //formatted onlineCourse properties
+                var onlineObject = education.onlineCourses[course]; //variable to contain a long selector
+                var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", onlineObject.title);
+                var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", onlineObject.school);
+                var formattedOnlineTitleSchool = formattedOnlineTitle + formattedOnlineSchool;
+                var formattedOnlineDates = HTMLonlineDates.replace("%data%", onlineObject.dates);
+                var formattedOnlineURL = HTMLonlineURL.replace("%data%", onlineObject.url);
 
-            //append online course properties to .education-entry
-            $(".education-entry:last").append(formattedOnlineTitleSchool);
-            $(".education-entry:last").append(formattedOnlineDates);
-            $(".education-entry:last").append(formattedOnlineURL);
-        } //end for onlineCourses
+                //append online course properties to .education-entry
+                $(".education-entry:last").append(formattedOnlineTitleSchool);
+                $(".education-entry:last").append(formattedOnlineDates);
+                $(".education-entry:last").append(formattedOnlineURL);
+            } //end for onlineCourses
+        } //end of if
     } //end of display method
 }; //end of education
 
