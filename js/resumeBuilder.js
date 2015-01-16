@@ -196,7 +196,55 @@ var education = {
             "dates": "December, 2014",
             "url": "https://www.udacity.com/course/ud304"
         }
-    ] //end of onlineCourses array
+    ], //end of onlineCourses array
+    "display": function() {
+        //loop schools array
+        for (school in education.schools) {
+            $("#education").append(HTMLschoolStart);
+
+            //formatted school properties
+            var schoolObject = education.schools[school]; //variable to contain a long selector
+            var formattedSchoolName = HTMLschoolName.replace("%data%", schoolObject.name);
+            var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", schoolObject.degree);
+            var formattedSchoolNameDegree = formattedSchoolName + formattedSchoolDegree;
+            var formattedSchoolDates = HTMLschoolDates.replace("%data%", schoolObject.dates);
+            var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", schoolObject.location);
+
+            //append school properties to .education-entry
+            $(".education-entry:last").append(formattedSchoolNameDegree);
+            $(".education-entry:last").append(formattedSchoolDates);
+            $(".education-entry:last").append(formattedSchoolLocation);
+
+            //loop school majors array
+            for (major in schoolObject.majors) {
+                //formatted major
+                var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", schoolObject.majors[major]);
+                //append major to .education-entry
+                $(".education-entry:last").append(formattedSchoolMajor);
+            } //end for major
+        } //end for schools
+
+        //append online courses start
+        $("#education").append(HTMLonlineClasses);
+
+        //loop onlineCourses array
+        for (course in education.onlineCourses) {
+            $("#education").append(HTMLschoolStart);
+
+            //formatted onlineCourse properties
+            var onlineObject = education.onlineCourses[course]; //variable to contain a long selector
+            var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", onlineObject.title);
+            var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", onlineObject.school);
+            var formattedOnlineTitleSchool = formattedOnlineTitle + formattedOnlineSchool;
+            var formattedOnlineDates = HTMLonlineDates.replace("%data%", onlineObject.dates);
+            var formattedOnlineURL = HTMLonlineURL.replace("%data%", onlineObject.url);
+
+            //append online course properties to .education-entry
+            $(".education-entry:last").append(formattedOnlineTitleSchool);
+            $(".education-entry:last").append(formattedOnlineDates);
+            $(".education-entry:last").append(formattedOnlineURL);
+        } //end for onlineCourses
+    } //end of display method
 }; //end of education
 
 //display methods executed
