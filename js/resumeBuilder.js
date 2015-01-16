@@ -29,3 +29,20 @@ var work = {
         }
     ] //end of jobs array
 }; //end of work
+
+//create projects object
+var projects = {
+    "projects": [
+        {
+            "title": "Sample Project 1",
+            "dates": "2014",
+            "description": "This is a dummy text just to fill in this fake sample project. This is a text that is not the usual lorem ipsum text which I really get bored into and therefore hang with me just a little while because this text needs to be long to fill in as a placeholder for this sample project description.",
+            "images": [
+                "images/197x148.gif",
+                "images/197x148.gif",
+                "images/197x148.gif",
+                "images/197x148.gif"
+            ] //end of images
+        }
+    ] //end of projects array
+}; //end of projects
