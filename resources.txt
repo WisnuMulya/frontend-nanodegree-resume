@@ -1,0 +1,6 @@
+Resources to this project:
+- Udacity GitHub Account: https://github.com/udacity/frontend-nanodegree-resume
+- Mozilla Developer Network website: https://developer.mozilla.org
+- jQuery Documentation: http://api.jquery.com/
+- Google Maps API Reference: https://developers.google.com/maps/documentation/javascript/
+- JavaScript Basics Udacity course itself: https://www.udacity.com/course/ud804-nd
