@@ -255,3 +255,6 @@ bio.display();
 work.display();
 projects.display();
 education.display();
+
+//append google map
+$("#mapDiv").append(googleMap)
